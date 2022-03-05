@@ -42,6 +42,8 @@ class _CustomLogoAppState extends State<CustomLogoApp>
           return BounceInUp(
             duration: const Duration(milliseconds: 1000),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
                   'Closet da Fabi',
@@ -52,9 +54,9 @@ class _CustomLogoAppState extends State<CustomLogoApp>
                 ),
                 const SizedBox(width: 15),
                 SvgPicture.asset(
-                  'assets/icon/butterfly.svg',
+                  'assets/icon/borboletinha.svg',
                   color: AppColors.primary,
-                  height: 80,
+                  height: 90,
                 ),
               ],
             ),
@@ -63,6 +65,8 @@ class _CustomLogoAppState extends State<CustomLogoApp>
         return FlipInX(
           duration: const Duration(milliseconds: 1000),
           child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
                 'Closet da Fabi',
@@ -73,7 +77,7 @@ class _CustomLogoAppState extends State<CustomLogoApp>
               ),
               const SizedBox(width: 15),
               SvgPicture.asset(
-                'assets/icon/butterfly.svg',
+                'assets/icon/borboletinha.svg',
                 color: AppColors.primary,
                 height: 150,
               ),

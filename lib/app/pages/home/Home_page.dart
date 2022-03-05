@@ -1,6 +1,5 @@
 import 'package:closet_fabi/app/pages/produto/detalhes_produto.dart';
 import 'package:closet_fabi/app/shared/routes/app_routes.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/theme/app_colors.dart';
@@ -53,9 +52,6 @@ class HomePage extends StatelessWidget {
             children: [
               Hero(
                 transitionOnUserGestures: true,
-                createRectTween: (begin, end) {
-                  return CustomRectTween(begin: begin!, end: end!);
-                },
                 tag: 't-shirt $i',
                 child: Image.asset(
                   'assets/image/blusa.png',
@@ -67,29 +63,5 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class CustomRectTween extends RectTween {
-  final Rect begin;
-  final Rect end;
-
-  CustomRectTween({required this.begin, required this.end})
-      : super(begin: begin, end: end);
-
-  @override
-  Rect lerp(double t) {
-    double x = Curves.easeOutCirc.transform(t);
-
-    return Rect.fromLTRB(
-      lerpDouble(begin.left, end.left, t),
-      lerpDouble(begin.top, end.top, t),
-      lerpDouble(begin.right, end.right, t) * (1 + x),
-      lerpDouble(begin.bottom, end.bottom, t) * (1 + x),
-    );
-  }
-
-  double lerpDouble(num begin, num end, double t) {
-    return begin + (end - begin) * t;
   }
 }
